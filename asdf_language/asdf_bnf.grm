@@ -1,0 +1,127 @@
+"Name"     = 'asdf'
+"Author"   = 'Arsany'
+"Version"  = '1.0'
+"About"    = 'a javascript looklike language'
+
+"Start Symbol" = <Program>
+
+
+
+! -------------------------------------------------
+! Terminals
+! -------------------------------------------------
+
+digit    = {digit}
+letter   = {letter}
+
+! -------------------------------------------------
+! Rules
+! -------------------------------------------------
+
+! The grammar of ebnf is starting below
+<Program> ::= <Function> <Program>
+            | 
+
+<Function> ::= 'function' <Identifier> '(' <Parameters> ')' '{' <Expression> '}'
+
+<Parameters> ::= 'let' <Identifier> <MoreParams>
+               | 
+
+<MoreParams> ::= ',' 'let' <Identifier> <MoreParams>
+               | 
+
+<Expression> ::= <AssignmentExp>
+                | <PrintStatement>
+                | <ComparisonExp>
+                | <WhileStatement>
+                | <ForStatement>
+                | <IfStatement>
+                | <SwitchStatement>
+                | <AddExp>
+
+<AssignmentExp> ::= 'let' <Identifier> '=' <Var>
+                   | <Identifier> '=' <Var>
+
+<PrintStatement> ::= 'print("' <String> '")'
+                   | 'print(' <Var> ')'
+
+<ComparisonExp> ::= <Var> <ComparisonOperator> <Value>
+                
+
+<WhileStatement> ::= 'while(' <Var> <ComparisonOperator> <Var> '){ ' <Expression> '}'
+                    | 'do{' <Expression> '}while(' <Var> <ComparisonOperator> <Var> ')'
+
+<ForStatement> ::= 'for(' <AssignmentExp> ',' <Var> <ComparisonOperator> <Value> ',' <AddExp> '){ ' <Expression> '}'
+
+<IfStatement> ::= 'if(' <Var> <ComparisonOperator> <Value> '){ ' <Expression> '}'
+                 | 'if(' <Var> <ComparisonOperator> <Value> '){ ' <Expression> '}else ' <IfStatement>
+                 | 'if(' <Var> <ComparisonOperator> <Value> '){ ' <Expression> '}else { ' <Expression> '}'
+
+<SwitchStatement> ::= 'switch(' <Var> '){ ' <Cases> '}'
+
+<Cases> ::= 'case(' <Var> '): ' <Expression> <Cases>
+           | 'default: ' <Expression>
+
+<AddExp> ::= <MultExp> <AddExpPrime>
+
+<AddExpPrime> ::= '+' <MultExp> <AddExpPrime>
+                 | '-' <MultExp> <AddExpPrime>
+                 | 
+
+<MultExp> ::= <NegateExp> <MultExpPrime>
+
+<MultExpPrime> ::= '*' <NegateExp> <MultExpPrime>
+                  | '/' <NegateExp> <MultExpPrime>
+                  | 
+
+<NegateExp> ::= '-' <NumericValue>
+               | <Value>
+
+<Var> ::= <Identifier> 
+        | <Value>
+
+<ComparisonOperator> ::= '>' 
+                        | '<'
+                        | '<='
+                        | '>='
+                        | '=='
+                        | '!='
+
+<NumericValue> ::= <Integer>
+                  | <Float>
+
+<Value> ::= '"' <String> '"'
+           | <Integer>
+           | <Float>
+           | <Boolean>
+           | '(' <Expression> ')'
+
+<Integer> ::= <Digit> <IntegerPrime>
+
+<IntegerPrime> ::= <Digit> <IntegerPrime>
+                  | 
+
+<Float> ::= <Digit> <FloatPrime> '.'  <Digit> <FloatPrime>
+
+<FloatPrime> ::= <Digit> <FloatPrime>
+                | 
+
+<Boolean> ::= 'True' | 'False'
+
+<Identifier> ::= <Letter> <IdentifierPrime>
+
+<IdentifierPrime> ::= <Letter> <IdentifierPrime>
+                     | <Digit> <IdentifierPrime>
+                     | 
+
+<String> ::= <Letter> <StringPrime>
+
+<StringPrime> ::= <Letter> <StringPrime>
+                 | <Digit> <StringPrime>
+                 | '-' <StringPrime>
+                 | '_' <StringPrime>
+
+<Digit> ::= digit
+
+<Letter> ::= letter
+

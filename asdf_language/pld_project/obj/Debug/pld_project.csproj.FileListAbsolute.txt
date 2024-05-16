@@ -1,0 +1,10 @@
+C:\Users\arsan\Desktop\pld\New folder (2)\pld_project\bin\Debug\pld_project.exe
+C:\Users\arsan\Desktop\pld\New folder (2)\pld_project\bin\Debug\pld_project.pdb
+C:\Users\arsan\Desktop\pld\New folder (2)\pld_project\obj\Debug\pld_project.csproj.AssemblyReference.cache
+C:\Users\arsan\Desktop\pld\New folder (2)\pld_project\obj\Debug\pld_project.Form1.resources
+C:\Users\arsan\Desktop\pld\New folder (2)\pld_project\obj\Debug\pld_project.Properties.Resources.resources
+C:\Users\arsan\Desktop\pld\New folder (2)\pld_project\obj\Debug\pld_project.csproj.GenerateResource.cache
+C:\Users\arsan\Desktop\pld\New folder (2)\pld_project\obj\Debug\pld_project.csproj.CoreCompileInputs.cache
+C:\Users\arsan\Desktop\pld\New folder (2)\pld_project\obj\Debug\pld_project.csproj.CopyComplete
+C:\Users\arsan\Desktop\pld\New folder (2)\pld_project\obj\Debug\pld_project.exe
+C:\Users\arsan\Desktop\pld\New folder (2)\pld_project\obj\Debug\pld_project.pdb
